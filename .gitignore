@@ -1,6 +1,6 @@
 
 # Created by https://www.gitignore.io/api/maven,gradle,sbt,linux,windows,intellij,eclipse
-
+*.iml
 ### Maven ###
 target/
 pom.xml.tag
@@ -77,7 +77,7 @@ $RECYCLE.BIN/
 .idea/sqlDataSources.xml
 .idea/dynamic.xml
 .idea/uiDesigner.xml
-
+.idea/
 # Gradle:
 .idea/gradle.xml
 .idea/libraries
