@@ -1,18 +1,32 @@
 package fap
 
-import fap.core.{Event, EventConsumer, EventMediator}
+import fap.core._
+
+import scala.concurrent.Future
 
 /**
   * Created by SangDang on 7/12/16.
   */
-class KafkaMediator extends EventMediator {
+case class KafkaPubMediator() extends PubMediator {
   override def publish(event: Event): Unit = {
 
   }
 
-  override def subscribe(eventName: List, consumer: EventConsumer, group: String = null): Unit = {
-
+  override def publishAsync(event: Event): Future[Boolean] = {
+    null
   }
 
-  override def unsubscribe(): Unit = {}
+
+  override def publishSync(event: Event): Boolean = {
+    false
+  }
 }
+
+case class KafkaSubMediator(val group: String, val names: Set[String]) extends SubMediator {
+  override def pull(timeout: Long): Iterable[Event] = ???
+
+  override def commitSync(): Unit = ???
+
+  override def commitAsync(): Unit = ???
+}
+
