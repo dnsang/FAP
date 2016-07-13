@@ -8,7 +8,7 @@ Idea:
 	+ Make a rope, connect some good projects to build a full analytic platform.
 	+ It could be easily deploy for a startup company or an enteprise company, in your infastructure or cloud service.
 
-Architecture:	
-Build:
-Test:
-Deployment:
+Architecture:	tbu
+Build: tbu
+Test: tbu
+Deployment: tbu
