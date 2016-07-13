@@ -11,7 +11,7 @@ trait EventProducer {
   def produceAsync(event:Event,numRetries:Int,logIfFailed:Boolean)
 
 }
-class BaseEventProducer(pubMediator: PubMediator) extends EventProducer{
+case class BaseEventProducer(pubMediator: PubMediator) extends EventProducer{
   override def produceSync(event: Event): Boolean = ???
 
   override def produceAsync(event: Event): Future[Boolean] = ???

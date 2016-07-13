@@ -1,11 +1,12 @@
 package fap
 
-import fap.core.{BaseWebServer, EventMediator, EventProducer}
+import fap.core.{BaseEventProducer, WebServer, EventProducer, PubMediator}
 
 /**
   * Created by SangDang on 7/13/16.
   */
-class AkkaWebServer extends BaseWebServer with EventProducer{
+class AkkaWebServer(pubMediator: PubMediator) extends BaseEventProducer(pubMediator) with WebServer {
+
   override def start(port: Int): Unit = {
 
   }
@@ -17,6 +18,5 @@ class AkkaWebServer extends BaseWebServer with EventProducer{
   override def restart(): Unit = {
 
   }
-
-  override val eventMediator: EventMediator = null
 }
+
