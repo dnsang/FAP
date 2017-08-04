@@ -19,7 +19,8 @@ RUN apt-get update && \
 
 ADD scripts/start-kafka.sh /usr/bin/start-kafka.sh
 ADD scripts/entrypoint.sh /entrypoint.sh
-
+run chmod +x /usr/bin/start-kafka.sh
+run chmod +x /entrypoint.sh
 #9092 is kafka
 EXPOSE 9092
 

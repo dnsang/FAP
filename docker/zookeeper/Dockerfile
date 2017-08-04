@@ -18,7 +18,7 @@ EXPOSE 2181 2888 3888
 WORKDIR /opt/zookeeper
 
 ADD scripts/entrypoint.sh /entrypoint.sh
-
+run chmod +x /entrypoint.sh
 VOLUME ["/opt/zookeeper/conf", "/data/zookeeper"]
 
 ENTRYPOINT ["/entrypoint.sh"]
