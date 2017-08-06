@@ -1,0 +1,31 @@
+version: '2'
+
+services:
+ zk:
+  image: "zkidkid/zookeeper"
+  restart: always
+  volumes:
+   - ./data/zk:/opt/zookeeper/data
+  ports:
+   - "10081:2181"
+  logging:
+   driver: "json-file"
+   options:
+    max-size: "200k"
+    max-file: "10" 
+ kafka:
+  image: "zkidkid/kafka"
+  restart: always
+  volumes: 
+   - ./data/kafka/:/opt/kafka/data
+  environment:
+   - KAFKA_HEAP_OPTS=-Xmx1g -Xms512m
+  command: kafka-server -z zk:2181 -D broker.id=0 -D advertised.host.name=127.0.0.1
+  ports:
+   - "10092:9092"
+  logging:
+   driver: "json-file"
+   options:
+    max-size: "200k"
+    max-file: "10" 
+
