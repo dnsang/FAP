@@ -1,3 +1,4 @@
+dist/
 data-infrastructure/data
 # Created by https://www.gitignore.io/api/maven,gradle,sbt,linux,windows,intellij,eclipse
 *.iml
